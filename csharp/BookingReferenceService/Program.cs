@@ -20,7 +20,7 @@ var count = 123456789;
 app.MapGet("/booking_reference", () =>
 {
     count++;
-    return JsonSerializer.Serialize(count.ToString("x"));
+return JsonSerializer.Serialize(count.ToString("x"));
 }).WithOpenApi();
 
 app.Run();
