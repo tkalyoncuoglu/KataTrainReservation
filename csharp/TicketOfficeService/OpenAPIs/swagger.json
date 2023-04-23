@@ -1,0 +1,29 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BookingReferenceService",
+    "version": "1.0"
+  },
+  "paths": {
+    "/booking_reference": {
+      "get": {
+        "tags": [
+          "BookingReferenceService"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

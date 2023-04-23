@@ -6,9 +6,14 @@ public record Seat(string Coach, int SeatNumber);
 
 public class TicketOffice
 {
-    public Reservation MakeReservation(ReservationRequest request)
+    public  Reservation MakeReservation(ReservationRequest request)
     {
-        //TODO: implement this code!
-        throw new NotImplementedException();
+        var bookingReferenceService = new BookingReferenceService("https://localhost:7182", new HttpClient());
+
+        Task<string> reference = bookingReferenceService.ReferenceAsync();
+
+        Task.WaitAll(reference);
+
+        return new Reservation("", reference.Result, null);
     }
 }
